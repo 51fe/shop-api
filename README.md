@@ -1,8 +1,13 @@
-# Vue Shop API
+#Shop API
 
-> API project(Express + Mongoose) for Vue Shop
+> REST API project( Express + Prisma ) for: 
+* [Vue shop](https://github.com/51fe/vue-shop)
+* [Reace shop](https://github.com/51fe/react-shop)
+* [RN shop](https://github.com/51fe/rn-shop)
 
-## Live demo: [https://vue-shop-api.herokuapp.com](https://vue-shop-api.herokuapp.com)</a>
+## Live demo: 
+
+[Demo](https://riafan-api.herokuapp.com)
 
 ## Build Setup
 ``` bash
