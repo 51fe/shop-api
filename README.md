@@ -1,8 +1,9 @@
-# Vue Shop API
+#Shop API
 
-> API project(Express + Mongoose) for Vue Shop
-
-## Live demo: [https://vue-shop-api.herokuapp.com](https://vue-shop-api.herokuapp.com)</a>
+> REST API project (Express + Prisma) for: 
+* [Vue shop](https://github.com/51fe/vue-shop)
+* [Reace shop](https://github.com/51fe/react-shop)
+* [RN shop](https://github.com/51fe/rn-shop)
 
 ## Build Setup
 ``` bash
@@ -12,6 +13,14 @@ npm install
 
 # serve at localhost:3000
 npm start
+
+# introsect prisma schema
+
+npx prisma db pull
+
+# generate prisma client
+
+npx prisma db push
 
 ```
 

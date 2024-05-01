@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const productController = require('../../controllers/product');
-const manufacturerController = require('../../controllers/manufacturer');
+import { Router } from 'express';
+const router = Router();
+import productController from '../controllers/product';
+import manufacturerController from '../controllers/manufacturer';
 
 router.get('/products', productController.all);
 router.get('/products/:id', productController.byId);
@@ -15,4 +15,4 @@ router.post('/manufacturers', manufacturerController.create);
 router.put('/manufacturers/:id', manufacturerController.update);
 router.delete('/manufacturers/:id', manufacturerController.remove);
 
-module.exports = router;
+export default router;
