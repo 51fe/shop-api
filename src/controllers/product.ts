@@ -30,7 +30,7 @@ export default {
     const { id }: { id?: string } = req.params;
 
     const post = await prisma.product.findUnique({
-      where: { id },
+      where: { id: Number(id) },
       include: { manufacturer: true }
     });
     res.json(post);
@@ -47,7 +47,7 @@ export default {
     const { id } = req.params;
 
     const post = await prisma.product.update({
-      where: { id },
+      where: { id: Number(id) },
       data: req.body
     });
     res.json(post);
@@ -57,7 +57,7 @@ export default {
     const { id } = req.params;
 
     await prisma.product.delete({
-      where: { id }
+      where: { id: Number(id) }
     });
     res.json(id);
   })

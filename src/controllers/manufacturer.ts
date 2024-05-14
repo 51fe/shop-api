@@ -28,7 +28,7 @@ export default {
   byId: asyncHandler(async (req: Request, res: Response) => {
     const { id }: { id?: string } = req.params;
     const post = await prisma.manufacturer.findUnique({
-      where: { id }
+      where: { id: Number(id) }
     });
     res.json(post);
   }),
@@ -44,7 +44,7 @@ export default {
     const { id } = req.params;
 
     const result = await prisma.manufacturer.update({
-      where: { id },
+      where: { id: Number(id) },
       data: req.body
     });
     res.json(result);
@@ -53,7 +53,7 @@ export default {
   remove: asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
     await prisma.manufacturer.delete({
-      where: { id }
+      where: { id: Number(id) }
     });
     res.json(id);
   })

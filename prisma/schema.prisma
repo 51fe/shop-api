@@ -3,12 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Manufacturer {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  id       Int       @id @default(autoincrement())
   name     String
   products Product[]
 
@@ -16,12 +16,12 @@ model Manufacturer {
 }
 
 model Product {
-  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  id             Int          @id @default(autoincrement())
   description    String
   image          String
   inventory      Int
   manufacturer   Manufacturer @relation(fields: [manufacturerId], references: [id])
-  manufacturerId String       @db.ObjectId
+  manufacturerId Int
   name           String
   price          Int
 
